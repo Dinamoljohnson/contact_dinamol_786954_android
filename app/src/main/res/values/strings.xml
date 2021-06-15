@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="FirstName_row" />
+    <string name="LastName_row" />
+    <string name="Email" />
+    <string name="PhoneNumber" />
+    <string name="Address" />
+    <string name="btnSave" />
+    <string name="update_label" />
+    <string name="search" />
+    <string name="app_name">contacts</string>
+</resources>
