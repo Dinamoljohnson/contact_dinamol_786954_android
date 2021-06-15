@@ -23,6 +23,7 @@
         android:icon="@drawable/ic_baseline_search"
         android:title="@string/search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

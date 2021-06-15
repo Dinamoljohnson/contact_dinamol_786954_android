@@ -4,7 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.SearchView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -16,7 +23,10 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
@@ -53,12 +63,27 @@ public class ContactsActivity extends AppCompatActivity {
                 .create(ContactViewModel.class);
 
         recyclerView = findViewById(R.id.recycler_view);
+        SearchView searchView =  findViewById(R.id.searchItems  );
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+               // ContactListAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(v -> {
+            Intent intent = new Intent(ContactsActivity.this, AddNewContact.class);
+            startActivity(intent);
 
-        searchView = findViewById(R.id.searchItems);
-
-
+        });
     }
+
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
 
         @Override
