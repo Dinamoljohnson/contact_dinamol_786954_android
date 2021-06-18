@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6F0F0"
-    tools:context=".AddNewContact">
+    tools:context=".AddNewContact"
+    tools:listitem="@layout/contact_row">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

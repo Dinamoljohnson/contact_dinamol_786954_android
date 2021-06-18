@@ -9,4 +9,7 @@
     <string name="update_label" />
     <string name="search" />
     <string name="app_name">contacts</string>
+    <string name="person_image" />
+    <string name="update_contact">Update Contact</string>
+    <string name="update">Update</string>
 </resources>
